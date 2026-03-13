@@ -1,16 +1,20 @@
 # lab_1_1.py
 # Считывание трех чисел и поиск минимального
 
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
-c = float(input("Введите третье число: "))
+try:
+    first_number = float(input("Введите первое число: "))
+    second_number = float(input("Введите второе число: "))
+    third_number = float(input("Введите третье число: "))
 
-minimum = a
+    minimum = first_number
 
-if b < minimum:
-    minimum = b
+    if second_number < minimum:
+        minimum = second_number
 
-if c < minimum:
-    minimum = c
+    if third_number < minimum:
+        minimum = third_number
 
-print("Минимальное число:", minimum) 
+    print("Минимальное число:", minimum)
+
+except ValueError:
+    print("Ошибка: необходимо вводить только числа.")
