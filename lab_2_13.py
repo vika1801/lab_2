@@ -1,24 +1,34 @@
 # lab_2_13.py
 # Вывод символов между скобками
 
-s = input("Введите строку: ")
+try:
+    text = input("Введите строку: ")
 
-start = -1
-end = -1
+    start_index = -1
+    end_index = -1
 
-i = 0
-while i < len(s):
-    if s[i] == "(":
-        start = i
-    if s[i] == ")":
-        end = i
-        break
-    i += 1
+    i = 0
+    while i < len(text):
 
-if start != -1 and end != -1 and end > start:
-    i = start + 1
-    while i < end:
-        print(s[i], end="")
+        if text[i] == "(":
+            start_index = i
+
+        if text[i] == ")":
+            end_index = i
+            break
+
         i += 1
-else:
-    print("Скобки не найдены")
+
+    if start_index != -1 and end_index != -1 and end_index > start_index:
+
+        i = start_index + 1
+
+        while i < end_index:
+            print(text[i], end="")
+            i += 1
+
+    else:
+        print("Ошибка: скобки не найдены.")
+
+except Exception as error:
+    print("Произошла ошибка:", error)
