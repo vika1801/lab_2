@@ -1,15 +1,19 @@
 # lab_1_2.py
 # Вывод чисел из диапазона [1, 50]
 
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
-c = float(input("Введите третье число: "))
+try:
+    first_number = float(input("Введите первое число: "))
+    second_number = float(input("Введите второе число: "))
+    third_number = float(input("Введите третье число: "))
 
-if 1 <= a <= 50:
-    print(a)
+    if 1 <= first_number <= 50:
+        print(first_number)
 
-if 1 <= b <= 50:
-    print(b)
+    if 1 <= second_number <= 50:
+        print(second_number)
 
-if 1 <= c <= 50:
-    print(c)
+    if 1 <= third_number <= 50:
+        print(third_number)
+
+except ValueError:
+    print("Ошибка: необходимо вводить только числа.")
