@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Микросервис валют</title>
+</head>
+<body>
+    <h1>Микросервис валют</h1>
+
+    <h2>Добавить валюту</h2>
+    <form action="/load" method="post">
+        <input name="currency_name" placeholder="Название валюты">
+        <input name="rate" type="number" step="any" placeholder="Курс к рублю">
+        <button type="submit">Добавить</button>
+    </form>
+
+    {% if action == "load" %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <h2>Обновить курс валют</h2>
+    <form action="/update_currency" method="post">
+        <input name="currency_name" placeholder="Название валюты">
+        <input name="rate" type="number" step="any" placeholder="Новый курс к рублю">
+        <button type="submit">Обновить</button>
+    </form>
+
+    {% if action == "update_currency" %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <h2>Удалить валюту</h2>
+    <form action="/delete" method="post">
+        <input name="currency_name" placeholder="Название валюты">
+        <button type="submit">Удалить</button>
+    </form>
+
+    {% if action == "delete" %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <h2>Конвертировать</h2>
+    <form action="/convert" method="get">
+        <input name="currency_name" placeholder="Название валюты">
+        <input name="amount" type="number" step="any" placeholder="Сколько?">
+        <button type="submit">Конвертировать в рубли</button>
+    </form>
+
+     {% if action == "convert" %}
+        <p>{{ result }}</p>
+    {% endif %}
+
+    <p><a href="/currencies">Показать список всех валют</a></p>
+
+    {% for c in currencies_list %}
+        <p>{{ c.currency_name }}: {{ c.rate }}</p>
+    {% endfor %}
+</body>
+</html>
