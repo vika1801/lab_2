@@ -1,5 +1,5 @@
 import unittest
-from triangle_func import get_triangle_type, IncorrectTriangleSides
+from lab_5.triangle_func import get_triangle_type, IncorrectTriangleSides
 
 
 class TestGetTriangleTypePositive(unittest.TestCase):

@@ -1,6 +1,6 @@
 import pytest
-from triangle_class import Triangle
-from triangle_func import IncorrectTriangleSides
+from lab_5.triangle_class import Triangle
+from lab_5.triangle_func import IncorrectTriangleSides
 
 
 # Тест №1: Равносторонний

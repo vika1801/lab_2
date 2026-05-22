@@ -1,4 +1,4 @@
-from triangle_func import IncorrectTriangleSides
+from lab_5.triangle_func import IncorrectTriangleSides
 
 
 class Triangle:
